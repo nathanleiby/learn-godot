@@ -1,11 +1,5 @@
 extends State
 
-"""
-State interface to use in Hierarchical State Machines.
-
-The lowest leaf tries to handle callbacks, and if it can't, it delegates the work to its parent.
-"""
-
 onready var move := get_parent()
 
 
