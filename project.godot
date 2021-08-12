@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "HookTarget",
+"language": "GDScript",
+"path": "res://src/Objects/HookTarget.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://src/Main/StateMachine/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"HookTarget": "",
 "Player": "",
 "State": "",
 "StateMachine": "res://assets/icons/state_machine.svg"
@@ -33,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Learn-godot"
-run/main_scene="res://src/Main/Main.tscn"
+run/main_scene="res://src/Main/Game.tscn"
 config/icon="res://icon.png"
 
 [autoload]
