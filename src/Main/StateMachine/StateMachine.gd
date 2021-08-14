@@ -19,7 +19,9 @@ func _init() -> void:
 
 func _ready() -> void:
 	# wait for owner to be ready
+	print("waiting for owner to be ready")
 	yield(owner, "ready")
+	print("state.enter()")
 	state.enter()
 
 

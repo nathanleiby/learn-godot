@@ -3,7 +3,7 @@ extends KinematicBody2D
 class_name Player  # creates a Player class
 
 # store player's dependencies
-onready var state_machine := $StateMachine
+onready var state_machine: StateMachine = $StateMachine
 onready var collider: CollisionShape2D = $CollisionShape2D
 
 const FLOOR_NORMAL := Vector2.UP  # we will use this with move_and_slide logic

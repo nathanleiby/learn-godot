@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/theme/gdquest.theme" type="Theme" id=1]
 [ext_resource path="res://src/UI/debug/DebugDock.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/tilesets/valley.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/tilesets/prototype.tres" type="TileSet" id=5]
 [ext_resource path="res://src/Objects/HookTarget.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Player/Player.tscn" type="PackedScene" id=7]
 
 [node name="Game" type="Node"]
 
@@ -23,7 +24,7 @@ script = ExtResource( 2 )
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 424.0
-margin_bottom = 584.0
+margin_bottom = 1064.0
 mouse_filter = 2
 
 [node name="DebugPanel" parent="UI/DebugDock/Column" instance=ExtResource( 3 )]
@@ -32,6 +33,8 @@ anchor_bottom = 0.0
 margin_right = 408.0
 margin_bottom = 102.0
 mouse_filter = 2
+reference_path = NodePath("../../../../Player/StateMachine/Move")
+properties = PoolStringArray( "velocity", "max_speed", "acceleration" )
 
 [node name="Level1" type="Node2D" parent="."]
 
@@ -68,3 +71,11 @@ position = Vector2( 1480, -600 )
 
 [node name="HookTarget4" parent="Level1" instance=ExtResource( 6 )]
 position = Vector2( 1560, 630 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 489.394, 500 )
+
+[node name="StateMachine" parent="Player" index="2"]
+initial_state = NodePath("Move/Air")
+
+[editable path="Player"]
