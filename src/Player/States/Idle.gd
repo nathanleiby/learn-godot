@@ -18,11 +18,12 @@ func physics_process(_delta: float) -> void:
 	if owner.is_on_floor():
 		if move.get_move_direction().x != 0.0:
 			_state_machine.transition_to("Move/Run")
-		else:
-			_state_machine.transition_to("Move/Air")
+	else:
+		_state_machine.transition_to("Move/Air")
 
-    ## NOT needed
-    #move.physics_process(_delta)
+	## NOT needed
+	#move.physics_process(_delta)
+
 
 func enter(_msg: Dictionary = {}) -> void:
 	move.enter(_msg)

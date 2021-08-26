@@ -31,10 +31,22 @@ mouse_filter = 2
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 408.0
-margin_bottom = 102.0
+margin_bottom = 196.0
+rect_pivot_offset = Vector2( -1593.04, -242.205 )
 mouse_filter = 2
 reference_path = NodePath("../../../../Player/StateMachine/Move")
 properties = PoolStringArray( "velocity", "max_speed", "acceleration" )
+
+[node name="DebugPanel2" parent="UI/DebugDock/Column" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 408.0
+margin_bottom = 332.0
+rect_pivot_offset = Vector2( -1593.04, -242.205 )
+mouse_filter = 2
+reference_path = NodePath("../../../../Player/StateMachine")
+properties = PoolStringArray( "_state_name" )
 
 [node name="Level1" type="Node2D" parent="."]
 
@@ -74,6 +86,12 @@ position = Vector2( 1560, 630 )
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 489.394, 500 )
+
+[node name="CollisionShape2D" parent="Player" index="0"]
+position = Vector2( -21.3574, -120.115 )
+
+[node name="Robi" parent="Player" index="1"]
+position = Vector2( -21.3574, -126.046 )
 
 [node name="StateMachine" parent="Player" index="2"]
 initial_state = NodePath("Move/Air")
